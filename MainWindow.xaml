@@ -1,0 +1,107 @@
+﻿<Window x:Class="WPF_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Calculator"
+        mc:Ignorable="d"
+               Title="Calculator" Height="650" Width="417" Background="#FFB19921">
+
+    <Window.Resources>
+        <Style x:Key="controls">
+            <Setter Property="Control.FontSize" Value="45"/>
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.Foreground" Value="#FF5A410C"/>
+            <Setter Property="Control.BorderBrush" Value="#FF5A410C"/>
+        </Style>
+        <Style x:Key="numButton" BasedOn="{StaticResource controls}">
+            <Setter Property="Control.Background" Value="#FFE8CC43"/>
+        </Style>
+        <Style x:Key="signButton" BasedOn="{StaticResource controls}">
+            <Setter Property="Control.Background" Value="#FFE8AC5F"/>
+            <Setter Property="Control.FontFamily" Value="Curlz MT"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="#FF5A410C">
+            <Menu Background="#FF5A410C">
+                <MenuItem Header="Правка" Background="#FF5A410C">
+                    <MenuItem Header="Копировать" Command="Copy" />
+                    <MenuItem Header="Вырезать" Command="Cut" />
+                    <MenuItem Header="Вставить" Command="Paste" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <DockPanel Grid.Row="1">
+            <TextBox x:Name="textBlock" FontSize="45" TextWrapping="Wrap" Margin="7 7 5 2" 
+                     HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" 
+                     Foreground="#FF3C2A05" Background="#FFA58D14" 
+                     BorderBrush="#FF5A410C" BorderThickness="3 3 1 1"/>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Margin="5,5,5,0">
+            <Grid x:Name="functionButton">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+                <Button Content="1/x" Margin="2" Grid.Row="0" Grid.Column="0" Width="94" Height="70" Style="{StaticResource signButton}"/>
+                <Button Content="√" Margin="2"  Grid.Row="0" Grid.Column="1" Width="94" Height="70" Style="{StaticResource signButton}"/>
+                <Button Content="x²" Margin="2" Grid.Row="0" Grid.Column="2" Width="94" Height="70" Style="{StaticResource signButton}"/>
+                <Button Content="!" Margin="2" Grid.Row="0" Grid.Column="3" Width="94" Height="70" Style="{StaticResource signButton}"/>
+            </Grid>
+        </DockPanel>
+        <Grid Grid.Row="3" x:Name="numButtons" Margin="5" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Button Content="." Width="94" Height="70" Margin="2" Grid.Row="4" Grid.Column="0" Style="{StaticResource signButton}"/>
+            <Button Content="0" Width="94" Height="70" Margin="2"  Grid.Row="4" Grid.Column="1" Style="{StaticResource numButton}"/>
+            <Button Content="🠴" Width="94" Height="70" Margin="2"  Grid.Row="4" Grid.Column="2" Style="{StaticResource signButton}"/>
+            <Button Content="=" Width="94" Height="70" Margin="2"  Grid.Row="4" Grid.Column="3" Style="{StaticResource signButton}"/>
+            <Button Content="1" Width="94" Height="70" Margin="2"  Grid.Row="3" Grid.Column="0" Style="{StaticResource numButton}"/>
+            <Button Content="2" Width="94" Height="70" Margin="2"  Grid.Row="3" Grid.Column="1" Style="{StaticResource numButton}"/>
+            <Button Content="3" Width="94" Height="70" Margin="2"  Grid.Row="3" Grid.Column="2" Style="{StaticResource numButton}"/>
+            <Button Content="+" Width="94" Height="70" Margin="2"  Grid.Row="3" Grid.Column="3" Style="{StaticResource signButton}"/>
+            <Button Content="4" Width="94" Height="70" Margin="2"  Grid.Row="2" Grid.Column="0" Style="{StaticResource numButton}"/>
+            <Button Content="5" Width="94" Height="70" Margin="2"  Grid.Row="2" Grid.Column="1" Style="{StaticResource numButton}"/>
+            <Button Content="6" Width="94" Height="70" Margin="2"  Grid.Row="2" Grid.Column="2" Style="{StaticResource numButton}"/>
+            <Button Content="-" Width="94" Height="70" Margin="2"  Grid.Row="2" Grid.Column="3" Style="{StaticResource signButton}"/>
+            <Button Content="7" Width="94" Height="70" Margin="2"  Grid.Row="1" Grid.Column="0" Style="{StaticResource numButton}"/>
+            <Button Content="8" Width="94" Height="70" Margin="2"  Grid.Row="1" Grid.Column="1" Style="{StaticResource numButton}"/>
+            <Button Content="9" Width="94" Height="70" Margin="2"  Grid.Row="1" Grid.Column="2" Style="{StaticResource numButton}"/>
+            <Button Content="×" Width="94" Height="70" Margin="2"  Grid.Row="1" Grid.Column="3" Style="{StaticResource signButton}"/>
+            <Button Content="(" Width="94" Height="70" Margin="2"  Grid.Row="0" Grid.Column="0" Style="{StaticResource signButton}"/>
+            <Button Content=")" Width="94" Height="70" Margin="2"  Grid.Row="0" Grid.Column="1" Style="{StaticResource signButton}"/>
+            <Button Content="C" Width="94" Height="70" Margin="2" Grid.Row="0" Grid.Column="2" Style="{StaticResource signButton}"/>
+            <Button Content="÷" Width="94" Height="70" Margin="2"  Grid.Row="0" Grid.Column="3" Style="{StaticResource signButton}"/>
+        </Grid>
+
+    </Grid>
+</Window>
+
