@@ -48,7 +48,8 @@ namespace WPF_Calculator
         {
             try
             {
-                string str = (string)((Button)e.OriginalSource).Content; //запись содержимого Content из перенаправленного события в переменную str
+               //запись содержимого Content из перенаправленного события в переменную str
+                string str = (string)((Button)e.OriginalSource).Content; 
 
                 //замена декоративных символов на стандартные символы для метода Compute()
                 if (str.Contains("×"))
@@ -66,9 +67,12 @@ namespace WPF_Calculator
 
                 else if (str == "=")
                 {
-                    string s = textBlock.Text.Replace(",", "."); //замена запятой на точку для метода Compute()
+                //замена запятой на точку для метода Compute()
+                    string s = textBlock.Text.Replace(",", "."); 
                     textBlock.Clear();
                     textBlock.Text = s;
+                    
+                //производство стандартных вычислений методом Compute()
                     string value = new DataTable().Compute(textBlock.Text, null).ToString();
                     textBlock.Text = value;
                 }
