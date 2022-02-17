@@ -66,6 +66,9 @@ namespace WPF_Calculator
 
                 else if (str == "=")
                 {
+                    string s = textBlock.Text.Replace(",", "."); //замена запятой на точку для метода Compute()
+                    textBlock.Clear();
+                    textBlock.Text = s;
                     string value = new DataTable().Compute(textBlock.Text, null).ToString();
                     textBlock.Text = value;
                 }
@@ -93,26 +96,17 @@ namespace WPF_Calculator
 
                 if (str == "1/x")
                 {
-                    string s = textBlock.Text.Replace(".", ","); //замена точки на запятую для конвертации строки в тип double
-                    textBlock.Clear();
-
-                    double x = Convert.ToDouble(s);
+                    double x = Convert.ToDouble(textBlock.Text);
                     textBlock.Text = (1 / x).ToString("0.###########");
                 }
                 else if (str == "√")
-                {
-                    string s = textBlock.Text.Replace(".", ","); 
-                    textBlock.Clear();
-                    
-                    double x = Convert.ToDouble(s);
+                {   
+                    double x = Convert.ToDouble(textBlock.Text);
                     textBlock.Text = Math.Sqrt(x).ToString("#,0.##########");
                 }
                 else if (str == "x²")
                 {
-                    string s = textBlock.Text.Replace(".", ",");
-                    textBlock.Clear();
-
-                    double x = Convert.ToDouble(s);
+                    double x = Convert.ToDouble(textBlock.Text);
                     textBlock.Text = Math.Pow(x, 2).ToString("#,0.##########");
                 }
                 else if (str == "!")

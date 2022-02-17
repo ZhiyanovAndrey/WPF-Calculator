@@ -84,7 +84,7 @@
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
-            <Button Content="." Width="94" Height="70" Margin="2" Grid.Row="4" Grid.Column="0" Style="{StaticResource signButton}"/>
+            <Button Content="," Width="94" Height="70" Margin="2" Grid.Row="4" Grid.Column="0" Style="{StaticResource signButton}"/>
             <Button Content="0" Width="94" Height="70" Margin="2"  Grid.Row="4" Grid.Column="1" Style="{StaticResource numButton}"/>
             <Button Content="🠴" Width="94" Height="70" Margin="2"  Grid.Row="4" Grid.Column="2" Style="{StaticResource signButton}"/>
             <Button Content="=" Width="94" Height="70" Margin="2"  Grid.Row="4" Grid.Column="3" Style="{StaticResource signButton}"/>
