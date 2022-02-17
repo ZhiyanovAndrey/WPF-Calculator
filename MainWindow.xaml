@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Calculator"
         mc:Ignorable="d"
-               Title="Calculator" Height="650" Width="417" Background="#FFB19921">
+               Title="Calculator" Height="650" Width="430" Background="#FFB19921">
 
     <Window.Resources>
         <Style x:Key="controls">
@@ -13,6 +13,7 @@
             <Setter Property="Control.FontWeight" Value="Bold"/>
             <Setter Property="Control.Foreground" Value="#FF5A410C"/>
             <Setter Property="Control.BorderBrush" Value="#FF5A410C"/>
+            <Setter Property="Control.BorderThickness" Value="1 1 3 3"/>
         </Style>
         <Style x:Key="numButton" BasedOn="{StaticResource controls}">
             <Setter Property="Control.Background" Value="#FFE8CC43"/>

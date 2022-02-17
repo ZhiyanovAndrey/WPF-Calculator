@@ -93,19 +93,27 @@ namespace WPF_Calculator
 
                 if (str == "1/x")
                 {
-                    double x = Convert.ToDouble(textBlock.Text);
+                    string s = textBlock.Text.Replace(".", ","); //замена точки на запятую для конвертации строки в тип double
                     textBlock.Clear();
-                    textBlock.Text = Convert.ToString(1 / x);
+
+                    double x = Convert.ToDouble(s);
+                    textBlock.Text = (1 / x).ToString("0.###########");
                 }
                 else if (str == "√")
                 {
-                    double x = Convert.ToDouble(textBlock.Text);
-                    textBlock.Text = Math.Sqrt(x).ToString();
+                    string s = textBlock.Text.Replace(".", ","); 
+                    textBlock.Clear();
+                    
+                    double x = Convert.ToDouble(s);
+                    textBlock.Text = Math.Sqrt(x).ToString("#,0.##########");
                 }
                 else if (str == "x²")
                 {
-                    double x = Convert.ToDouble(textBlock.Text);
-                    textBlock.Text = Math.Pow(x, 2).ToString();
+                    string s = textBlock.Text.Replace(".", ",");
+                    textBlock.Clear();
+
+                    double x = Convert.ToDouble(s);
+                    textBlock.Text = Math.Pow(x, 2).ToString("#,0.##########");
                 }
                 else if (str == "!")
                 {
@@ -115,7 +123,7 @@ namespace WPF_Calculator
                     {
                         s *= i;
                     }
-                    textBlock.Text = s.ToString("n0");
+                    textBlock.Text = s.ToString("#,0");
                 }
 
                 else textBlock.Text += str;
