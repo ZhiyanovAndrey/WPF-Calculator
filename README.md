@@ -3,7 +3,7 @@
 Одно-оконное WPF приложение с функциональными и стандартными кнопками, также имеет ToolBar с встроенными командами Copy, Paste, Cut.
 Предназначено для расчета стандартных математических операций плюс имеет четыре инженерные функции для расчета факториала, деления 1 на x, вычисления квадратного корня и возведения в квадрат.
 
-![Иллюстрация к проекту](https://github.com/ZhiyanovAndrey/WpfMVVMsurgeCarentCalculater/blob/master/SurgeCurrentCalculator.jpg)
+![Иллюстрация к проекту](https://github.com/ZhiyanovAndrey/WPF-Calculator/blob/master/Calculator.jpg)
 
 Стек Технологий:
 
